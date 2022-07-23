@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+
+    new Promise((resolve) => {
+      console.log('promise1')
+      resolve()
+    }).then(() => {
+      console.log('then11')
+      new Promise((resolve) => {
+        console.log('promise2')
+        resolve()
+      }).then(() => {
+        console.log('promise21')
+      }).then(() => {
+        console.log('promise31')
+      })
+    }).then(() => {
+      console.log('then12')
+    })
+
+    new Promise((resolve) => {
+      console.log('__promise1')
+      resolve()
+    }).then(() => {
+      console.log('__then11')
+      new Promise((resolve) => {
+        console.log('__promise2')
+        resolve()
+      }).then(() => {
+        console.log('__promise21')
+      }).then(() => {
+        console.log('__promise31')
+      })
+    }).then(() => {
+      console.log('__then12')
+    })
+
+ 
+  </script>
+</body>
+</html>
